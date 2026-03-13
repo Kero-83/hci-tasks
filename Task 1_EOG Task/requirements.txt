@@ -5,3 +5,4 @@ statsmodels
 openpyxl
 matplotlib
 scikit-learn
+PyWavelets
