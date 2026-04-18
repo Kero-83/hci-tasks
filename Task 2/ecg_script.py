@@ -230,10 +230,10 @@ fiducial_df
 # 2. **AC+DCT** — autocorrelation captures rhythm; DCT compresses it
 
 # %%
-def extract_dwt_features(signal, wavelet='db4', level=4):
+def extract_dwt_features(signal, wavelet='db4', level=3):
     """Extract mean_abs, std, energy from each DWT sub-band."""
     coeffs = pywt.wavedec(signal, wavelet, level=level)
-    names = ['cA4', 'cD4', 'cD3', 'cD2', 'cD1']
+    names = ['A3', 'D3', 'D2', 'D1']
     features = {}
     for name, c in zip(names, coeffs):
         features[f'DWT_{name}_mean_abs'] = np.mean(np.abs(c))
